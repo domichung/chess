@@ -21,6 +21,7 @@ while (1):
         zs.show_zone(chess_zone)
         a = input()
         b = input()
+        
         #print(a+" "+b)
         try:
             status = ml.check_chess(nowteam,chess_zone,a[0],b[0])
@@ -29,15 +30,18 @@ while (1):
             sl.label_print("e_msg_3 ")
             print('----------------------------')
             continue
-        #chess_zone[int(a)][int(b)] = '空'
-        #os.system("cls")
-        #zs.show_nowteam(nowteam)
-        #zs.show_zone(chess_zone)
-        #os.system("cls")
+        ##chess_zone[int(a)][int(b)] = '空'
+        ##os.system("cls")
+        ##zs.show_nowteam(nowteam)
+        ##zs.show_zone(chess_zone)
+        ##os.system("cls")
+        if (status == -2):
+            sl.label_print("e_msg_777 ")
+            break
         if (status == 1):
             nowteam = (int(nowteam)+1)%2
 #======================測試完要加回去=============================
-            #os.system("cls")
+            os.system("cls")
 #================================================================    
     os.system("cls")
     wcheckw.check_whowin(chess_zone)

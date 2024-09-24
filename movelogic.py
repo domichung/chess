@@ -43,7 +43,13 @@ def check_chess(team,zone,x,y):
         print('--------------------------')
         return -1
     
-    move_temp(zone,x,y)
+    move_status = move_temp(zone,x,y)
+    
+    if (move_status == -1):
+        os.system("cls")
+        sl.label_print("e_msg_2 ")
+        print('--------------------------')
+        return -1
 
     return 1
 
@@ -51,7 +57,11 @@ def move_temp(zone,x,y):
     chess = zone[int(y)][int(x)]
     print("你選擇了"+chess)
     if (chess in red_pieces):
-       msr.r_move_main(chess,x,y,zone)
+       check_choose = msr.r_move_main(chess,x,y,zone)
+       if (check_choose == -1):
+           return -1
+       else:
+           return 1
     #elif (chess in black_pieces):
     else:
         print("fuck up")
