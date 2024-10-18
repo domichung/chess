@@ -2,6 +2,7 @@ import str_lang as sl
 import os
 import logic.red
 import move_serch_r as msr
+import move_serch_b as msb
 # red 0
 red_pieces = {'俥', '傌', '相', '仕', '帥', '炮', '兵'}
 # black 1
@@ -62,7 +63,12 @@ def move_temp(zone,x,y):
            return -1
        else:
            return 1
-    #elif (chess in black_pieces):
+    elif (chess in black_pieces):
+        check_choose = msb.b_move_main(chess,x,y,zone)
+        if (check_choose == -1):
+           return -1
+        else:
+           return 1
     else:
         print("fuck up")
 

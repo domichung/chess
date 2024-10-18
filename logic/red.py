@@ -111,6 +111,7 @@ def r_artillery(x,y,zone):
             break
         if (zone[t_y][x] in black_pieces):
             boundary += str(int(x))+str(int(t_y))
+            break
 
     t_y = y      
     eat_flag = 0
@@ -128,6 +129,7 @@ def r_artillery(x,y,zone):
             break
         if (zone[t_y][x] in black_pieces):
             boundary += str(int(x))+str(int(t_y))
+            break
     
     t_x = x
     eat_flag = 0
@@ -145,6 +147,7 @@ def r_artillery(x,y,zone):
             break
         if (zone[y][t_x] in black_pieces):
             boundary += str(int(t_x))+str(int(y))
+            break
     
     t_x = x
     eat_flag = 0
@@ -162,6 +165,7 @@ def r_artillery(x,y,zone):
             break
         if (zone[y][t_x] in black_pieces):
             boundary += str(int(t_x))+str(int(y))
+            break
 
     #print(boundary)
     return boundary
